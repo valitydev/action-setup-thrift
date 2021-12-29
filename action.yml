@@ -11,7 +11,7 @@ runs:
   steps:
     - name: Install thrift
       run: |
-        wget -qO- ./thrift.tar.gz "https://github.com/valitydev/thrift/releases/download/${{ inputs.thrift-version }}/thrift-${{ inputs.thrift-version }}-linux-x86_64.tar.gz" \
+        wget -qO- "https://github.com/valitydev/thrift/releases/download/${{ inputs.thrift-version }}/thrift-${{ inputs.thrift-version }}-linux-x86_64.tar.gz" \
         | sudo tar -xvz -C /usr/bin/
       shell: bash
     - name: Check installation
