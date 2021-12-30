@@ -1,0 +1,20 @@
+name: "Install thrift"
+description: "Installs thrift binary"
+inputs:
+  thrift-version:
+    description: 'Thrift version to install'
+    default: '0.14.2'
+    required: false
+
+runs:
+  using: composite
+  steps:
+    - name: Install thrift
+      run: |
+        wget -qO- "https://github.com/valitydev/thrift/releases/download/${{ inputs.thrift-version }}/thrift-${{ inputs.thrift-version }}-linux-x86_64.tar.gz" \
+        | sudo tar -xvz -C /usr/bin/
+      shell: bash
+    - name: Check installation
+      run: |
+        thrift --version
+      shell: bash
