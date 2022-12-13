@@ -3,7 +3,7 @@ description: "Installs thrift binary"
 inputs:
   thrift-version:
     description: 'Thrift version to install'
-    default: '0.14.2.3'
+    default: '0.17.0'
     required: false
 
 runs:
